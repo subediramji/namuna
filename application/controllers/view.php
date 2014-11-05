@@ -17,8 +17,10 @@ public function index()
     $data['gadget'] = $this->model1->get_gaget();  
     $data['headertitle']= $this->viewmodel->get_header_title();
     $data['headerlogo']= $this->viewmodel->get_header_logo();
+    $data['category'] = $this->viewmodel->get_latest_five_category();
            
-       $this->load->view('namunaIns/header',$data);      
+       $this->load->view('namunaIns/header',$data);  
+       $this->load->view('namunaIns/category',$data);  
            
              
         }

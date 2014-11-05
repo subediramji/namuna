@@ -25,6 +25,14 @@ class Viewmodel extends CI_Model
         $query = $this->db->get();
         return $query->result(); 
     }
+    public function get_latest_five_category()
+    {
+          $this->db->limit(4);
+       $this->db->order_by("id", "desc");
+        $query = $this->db->get('category');
+        return $query->result();
+    }
+
     public function get_max_page_to_show(){
         $this->db->select('description');
          $this->db->from('misc_setting');
